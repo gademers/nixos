@@ -4,14 +4,18 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     qtile = "qtile";
-    nvim = "nvim";
     alacritty = "alacritty";
     rofi = "rofi";
+    nvim = "nvim";
   };
 in
 
 {
-  home.username = "smee";
+ #imports = [
+  # /etc/home/smee/nixos-dotfiles/modules/neovim.nix
+  #];
+
+ home.username = "smee";
   home.homeDirectory = "/home/smee";
   programs.git.enable = true;
   home.stateVersion = "25.05";
@@ -30,12 +34,22 @@ in
     configs;
 
   home.packages = with pkgs; [
+    
+    #neovim stuff
     neovim
     ripgrep
     nil
     nixpkgs-fmt
     nodejs
+
+
     gcc
     rofi
-  ];
+    gh
+    bitwarden
+    bitwarden-cli
+    tealdeer
+    xclip
+    bat
+    ];
 }
