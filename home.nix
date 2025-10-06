@@ -45,7 +45,6 @@ in
 
     gcc
     rofi
-    gh
     bitwarden
     bitwarden-cli
     tealdeer
