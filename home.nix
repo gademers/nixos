@@ -7,6 +7,7 @@ let
     alacritty = "alacritty";
     rofi = "rofi";
     nvim = "nvim";
+    picom = "picom";
   };
 in
 
@@ -23,12 +24,16 @@ in
     enable = true;
     shellAliases = {
       smeecat = "echo more wet food please? meow";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-smee";
     };
+    initExtra = ''
+    	   export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
+	  '';
   };
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
-      source = create_symlink "${dotfiles}/qtile/";
+      source = create_symlink "${dotfiles}/${subpath};";
       recursive = true;
     })
     configs;

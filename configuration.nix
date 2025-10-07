@@ -24,6 +24,8 @@
   };
   services.displayManager.ly.enable = true;
   
+  services.picom.enable = true;
+
   users.users.smee = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
