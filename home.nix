@@ -3,13 +3,13 @@ let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    #qtile = "qtile";
+    qtile = "qtile";
     alacritty = "alacritty";
     rofi = "rofi";
     nvim = "nvim";
     picom = "picom";
     tmux = "tmux";
-    dwm = "dwm";
+    #dwm = "dwm";
     dmenu = "dmenu";
   };
 in
@@ -60,8 +60,8 @@ in
 
     #dwm requirements
     dmenu
-    slock
-    xorg-server
-    maim
+    #slock
+    #xorg
+    #maim
   ];
 }

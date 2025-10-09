@@ -20,7 +20,7 @@
     enable = true;
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
-    windowManager.dwm.enable = true;
+    windowManager.qtile.enable = true;
   };
   services.displayManager.ly.enable = true;
   services.picom.enable = true;
@@ -47,7 +47,7 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
 
