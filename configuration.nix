@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       /etc/nixos/hardware-configuration.nix
     ];
 
@@ -10,20 +10,19 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-smee";
-  networking.networkmanager.enable = true; 
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Toronto";
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   services.xserver = {
-	enable = true;
-	autoRepeatDelay = 200;
-	autoRepeatInterval = 35;
-	windowManager.qtile.enable = true;
+    enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+    windowManager.dwm.enable = true;
   };
   services.displayManager.ly.enable = true;
-  
   services.picom.enable = true;
 
   users.users.smee = {
@@ -41,13 +40,15 @@
     wget
     git
     alacritty
+    tmux
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
 
 }
