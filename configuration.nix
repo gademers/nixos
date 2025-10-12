@@ -6,6 +6,13 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "lz4";
+    memoryPercent = 50;
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -43,9 +50,9 @@
     tmux
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+  fonts.packages = with pkgs; [  nerd-fonts.jetbrains-mono
   ];
+
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

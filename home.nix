@@ -16,18 +16,24 @@ in
 
 {
   #imports = [
-  # /etc/home/smee/nixos/modules/neovim.nix
+  # /home/smee/nixos/modules/neovim.nix
   #];
 
   home.username = "smee";
   home.homeDirectory = "/home/smee";
-  programs.git.enable = true;
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.05";  
+  
+  programs.git = {
+    enable = true;
+    userName = "gademers";
+    userEmail = "guillaume.demers.gd@gmail.com";
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
       smeecat = "echo more wet food please? meow";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos#nixos-smee";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos#nixos-framework --impure";
     };
     initExtra = ''
           	   export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
