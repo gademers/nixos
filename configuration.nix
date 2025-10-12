@@ -9,7 +9,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-smee";
+  networking.hostName = "nixos-framework";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Toronto";
@@ -27,7 +27,7 @@
 
   users.users.smee = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
     ];

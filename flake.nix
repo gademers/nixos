@@ -9,7 +9,7 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }: {
-		nixosConfigurations.nixos-smee = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.nixos-framework = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix

@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  dotfiles = "${config.home.homeDirectory}/nixos/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     qtile = "qtile";
@@ -16,7 +16,7 @@ in
 
 {
   #imports = [
-  # /etc/home/smee/nixos-dotfiles/modules/neovim.nix
+  # /etc/home/smee/nixos/modules/neovim.nix
   #];
 
   home.username = "smee";
@@ -27,7 +27,7 @@ in
     enable = true;
     shellAliases = {
       smeecat = "echo more wet food please? meow";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-smee";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos#nixos-smee";
     };
     initExtra = ''
           	   export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
