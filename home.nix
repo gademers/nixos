@@ -50,14 +50,7 @@ in
     configs;
 
   home.packages = with pkgs; [
-
-    #neovim stuff
-    #neovim
-    #ripgrep
-    #nil
-    #nixpkgs-fmt
-    #nodejs
-
+  
     gcc
     rofi
     bitwarden
@@ -65,17 +58,13 @@ in
     xclip
     bat
     steam
-    # kruler
+    #kruler
     flameshot
     obsidian
     discord
-    #brave
-    #gemini-cli
+    brave
+    gemini-cli
+    
 
-    #dwm requirements
-    #dmenu
-    #slock
-    #xorg
-    #maim
   ];
 }
