@@ -1,24 +1,24 @@
-{ config, pkgs, lib, ...}
+{ config, pkgs, lib, ... }
 
 {
-	home.packages = with pkgs; [
-		#tools for telescope
-		ripgrep
-		fd
-		fzf
+home.packages = with pkgs; [
+#tools for telescope
+ripgrep
+fd
+fzf
 
-		#language servers
-		lua-language-server
-		nil
-		nixpkgs-fmt
+#language servers
+lua-language-server
+nil
+nixpkgs-fmt
 
-		nodejs #needed for lazyvim
+nodejs #needed for lazyvim
 
-	];
+];
 
-	programs.neovim = {
-		enable = true;
-		viAlias = true;
-		vimAlias = true;
-		};
+programs.neovim = {
+enable = true;
+viAlias = true;
+vimAlias = true;
+};
 }

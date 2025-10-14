@@ -21,16 +21,29 @@
 
   time.timeZone = "America/Toronto";
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  services.xserver = {
-    enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    windowManager.qtile.enable = true;
+
+  services = {
+
+    displayManager = {
+      ly.enable = true;
+    };
+
+    xserver = {
+      enable = true;
+      autoRepeatDelay = 200;
+      autoRepeatInterval = 35;
+      windowManager.qtile.enable = true;
+      windowManager.dwm = {
+        enable = true;
+        package = pkgs.dwm.overrideAttrs {
+          src = ./config/dwm;
+        };
+      };
+    };
+
+    picom.enable = true;
   };
-  services.displayManager.ly.enable = true;
-  services.picom.enable = true;
+
 
   users.users.smee = {
     isNormalUser = true;
@@ -50,7 +63,8 @@
     tmux
   ];
 
-  fonts.packages = with pkgs; [  nerd-fonts.jetbrains-mono
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 
 

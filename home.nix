@@ -10,19 +10,21 @@ let
     picom = "picom";
     tmux = "tmux";
     #dwm = "dwm";
-    dmenu = "dmenu";
+    #dmenu = "dmenu";
   };
 in
 
 {
-  #imports = [
-  # /home/smee/nixos/modules/neovim.nix
-  #];
+  imports = [
+    # /home/smee/nixos/modules/neovim.nix
+    #./modules/neovim.nix
+    ./modules/suckless.nix
+  ];
 
   home.username = "smee";
   home.homeDirectory = "/home/smee";
-  home.stateVersion = "25.05";  
-  
+  home.stateVersion = "25.05";
+
   programs.git = {
     enable = true;
     userName = "gademers";
@@ -63,9 +65,13 @@ in
     xclip
     bat
     steam
+    # kruler
+    flameshot
+    obsidian
+    discord
 
     #dwm requirements
-    dmenu
+    #dmenu
     #slock
     #xorg
     #maim
