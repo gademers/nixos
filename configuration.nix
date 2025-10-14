@@ -33,6 +33,7 @@
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       windowManager.qtile.enable = true;
+      windowManager.oxwm.enable = true;
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {

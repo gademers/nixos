@@ -6,9 +6,11 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    oxwm.url = "github:tonybanters/oxwm";
+    oxwm.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, oxwm, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -33,6 +35,7 @@
         system = system;
         modules = [
           ./configuration.nix
+          oxwm.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager = {

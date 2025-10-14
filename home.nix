@@ -11,12 +11,12 @@ let
     tmux = "tmux";
     #dwm = "dwm";
     #dmenu = "dmenu";
+    #oxwm = "oxwm";
   };
 in
 
 {
   imports = [
-    # /home/smee/nixos/modules/neovim.nix
     ./modules/neovim.nix
     ./modules/suckless.nix
   ];
