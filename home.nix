@@ -17,7 +17,7 @@ in
 {
   imports = [
     # /home/smee/nixos/modules/neovim.nix
-    #./modules/neovim.nix
+    ./modules/neovim.nix
     ./modules/suckless.nix
   ];
 
@@ -52,11 +52,11 @@ in
   home.packages = with pkgs; [
 
     #neovim stuff
-    neovim
-    ripgrep
-    nil
-    nixpkgs-fmt
-    nodejs
+    #neovim
+    #ripgrep
+    #nil
+    #nixpkgs-fmt
+    #nodejs
 
     gcc
     rofi
@@ -69,6 +69,8 @@ in
     flameshot
     obsidian
     discord
+    #brave
+    #gemini-cli
 
     #dwm requirements
     #dmenu
