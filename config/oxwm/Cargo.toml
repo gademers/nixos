@@ -1,0 +1,12 @@
+[package]
+name = "oxwm-user"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+oxwm = { git = "https://github.com/tonybanters/oxwm" }
+anyhow = "1"
+
+[[bin]]
+name = "oxwm-user"
+path = "main.rs"

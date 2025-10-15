@@ -11,7 +11,7 @@ let
     tmux = "tmux";
     #dwm = "dwm";
     #dmenu = "dmenu";
-    #oxwm = "oxwm";
+    oxwm = "oxwm";
   };
 in
 
@@ -50,7 +50,7 @@ in
     configs;
 
   home.packages = with pkgs; [
-  
+
     gcc
     rofi
     bitwarden
@@ -64,7 +64,7 @@ in
     discord
     brave
     gemini-cli
-    
+
 
   ];
 }
