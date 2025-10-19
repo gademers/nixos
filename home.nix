@@ -9,7 +9,6 @@ let
     nvim = "nvim";
     picom = "picom";
     dmenu = "dmenu";
-    #oxwm = "oxwm";
   };
 in
 
@@ -17,6 +16,7 @@ in
   imports = [
     ./modules/neovim.nix
     ./modules/suckless.nix
+    ./modules/qtile.nix
   ];
 
   home.username = "smee";
@@ -65,6 +65,5 @@ in
     discord
     brave
     gemini-cli
-
   ];
 }
