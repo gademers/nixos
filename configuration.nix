@@ -23,28 +23,17 @@
 
 
   services = {
-
     displayManager = {
       ly.enable = true;
     };
-
     xserver = {
       enable = true;
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       windowManager.qtile.enable = true;
-      windowManager.oxwm.enable = true;
-      windowManager.dwm = {
-        enable = true;
-        package = pkgs.dwm.overrideAttrs {
-          src = ./config/dwm;
-        };
-      };
     };
-
     picom.enable = true;
   };
-
 
   users.users.smee = {
     isNormalUser = true;
@@ -54,20 +43,17 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget
     git
     alacritty
-    tmux
+    fzf
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
-
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

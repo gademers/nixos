@@ -36,31 +36,10 @@
         "type": "indirect"
       }
     },
-    "oxwm": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1760475409,
-        "narHash": "sha256-NT8+kvyYrtUKwNBbZD7dtMoF93aJ64LriSV5oVlz/xY=",
-        "owner": "tonybanters",
-        "repo": "oxwm",
-        "rev": "459411451c646943376c31e92af1bf10804ee54b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tonybanters",
-        "repo": "oxwm",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "oxwm": "oxwm"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

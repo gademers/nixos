@@ -8,10 +8,8 @@ let
     rofi = "rofi";
     nvim = "nvim";
     picom = "picom";
-    tmux = "tmux";
-    #dwm = "dwm";
-    #dmenu = "dmenu";
-    oxwm = "oxwm";
+    dmenu = "dmenu";
+    #oxwm = "oxwm";
   };
 in
 
@@ -51,6 +49,9 @@ in
 
   home.packages = with pkgs; [
 
+    ranger
+    nix-search-tv
+
     gcc
     rofi
     bitwarden
@@ -59,12 +60,11 @@ in
     bat
     steam
     #kruler
-    flameshot
+    #flameshot
     obsidian
     discord
     brave
     gemini-cli
-
 
   ];
 }
