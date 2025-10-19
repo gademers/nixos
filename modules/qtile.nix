@@ -3,10 +3,10 @@
 {
   home.packages = with pkgs; [
     python3Packages.psutil
-    vscode
-    thunar
+    # vscode
+    # thunar
     pavucontrol
-    xfce4-power-manager
+    # xfce4-power-manager
     nitrogen
     flameshot
     alsa-utils
