@@ -9,6 +9,7 @@ let
     nvim = "nvim";
     picom = "picom";
     dmenu = "dmenu";
+    #leftwm = "leftwm";
   };
 in
 
@@ -17,6 +18,7 @@ in
     ./modules/neovim.nix
     ./modules/suckless.nix
     ./modules/qtile.nix
+    #./modules/leftwm.nix
   ];
 
   home.username = "smee";
@@ -65,5 +67,9 @@ in
     discord
     brave
     gemini-cli
+    torrential
+
+    networkmanager_dmenu
+    blueman
   ];
 }

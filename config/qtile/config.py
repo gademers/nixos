@@ -53,7 +53,7 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "d", lazy.spawn("rofi -show drun -show-icons"), desc='Run Launcher'),
+    Key([mod], "d", lazy.spawn("dmenu_run"), desc='Run Launcher'),
     Key(
         ["control"], 
         "F12",

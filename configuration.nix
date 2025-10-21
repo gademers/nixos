@@ -31,6 +31,7 @@
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       windowManager.qtile.enable = true;
+      #windowManager.leftwm.enable = true;
     };
     picom.enable = true;
   };
@@ -50,6 +51,8 @@
     alacritty
     fzf
   ];
+
+  programs.firefox.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
