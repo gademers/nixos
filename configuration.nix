@@ -31,7 +31,7 @@
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       windowManager.qtile.enable = true;
-      windowManager.leftwm.enable = true;
+      windowManager.oxwm.enable = true;
     };
     picom.enable = true;
   };
@@ -51,14 +51,9 @@
     alacritty
     fzf
     ghostty
-
-    #/pkgs/
-    lazybar
   ];
 
   programs.firefox.enable = true;
-
-  services.xserver.displayManager.sessionCommands = '' lazybar main & '';
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

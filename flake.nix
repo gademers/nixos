@@ -6,18 +6,22 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    lazybar-src.url = "github:Qelxiros/lazybar";
-    flake-utils.url = "github:numtide/flake-utils";
-
-    #mangowc = {
-    #  url = "github:DreamMaoMao/mangowc";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    oxwm = {
+      url = "github:tonybanters/oxwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = { self, nixpkgs, home-manager, rust-overlay, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, flake-utils, oxwm, rust-overlay, ... }:
 
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -27,13 +31,9 @@
           overlays =
             [ rust-overlay.overlay ];
         };
-        lazybarPkg = pkgs.callPackage ./pkgs/lazybar.nix;
       in
 
       {
-
-        packages = { lazybar = lazybarPkg; };
-
 
         devShells.${system}.suckless = pkgs.mkShell {
           # toolchain + headers/libs
@@ -54,6 +54,7 @@
           inherit system; #system = system;
           modules = [
             ./configuration.nix
+            oxwm.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -62,10 +63,6 @@
                 users.smee = import ./home.nix;
                 backupFileExtension = "backup";
               };
-            }
-
-            {
-              environment.systemPackages = [ lazybarPkg ];
             }
 
           ];
