@@ -6,16 +6,7 @@
   #  home.file.".config/leftwm/themes/current/theme.toml".source = ../config/leftwm/themes/current/theme.toml;
 
 
-  # Polybar for the status bar
-  services.polybar = {
-    enable = true;
-    package = pkgs.polybar.override {
-      pulseSupport = true;
-      nlSupport = true;
-    };
-    script = "polybar main &";
-    config = ../config/polybar/config.ini;
-  };
+
 
   # Network Manager applet
   home.packages = with pkgs; [

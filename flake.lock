@@ -36,10 +36,27 @@
         "type": "indirect"
       }
     },
+    "oatbar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761113633,
+        "narHash": "sha256-KrU0lymivJypF3cGKx936uGYQESVD0uO4jFspKdV7oY=",
+        "owner": "DreamMaoMao",
+        "repo": "mangowc",
+        "rev": "3fa306fc191fd70ea2cdb8f2328685af7d44e419",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DreamMaoMao",
+        "repo": "mangowc",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "oatbar": "oatbar"
       }
     }
   },

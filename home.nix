@@ -9,7 +9,8 @@ let
     nvim = "nvim";
     picom = "picom";
     dmenu = "dmenu";
-    #leftwm = "leftwm";
+    leftwm = "leftwm";
+    lazybar = "lazybar";
   };
 in
 
@@ -18,7 +19,7 @@ in
     ./modules/neovim.nix
     ./modules/suckless.nix
     ./modules/qtile.nix
-    #./modules/leftwm.nix
+    # ./modules/leftwm.nix
   ];
 
   home.username = "smee";
