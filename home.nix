@@ -9,7 +9,7 @@ let
     nvim = "nvim";
     picom = "picom";
     dmenu = "dmenu";
-
+    oxwm = "oxwm";
   };
 in
 
