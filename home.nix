@@ -13,6 +13,7 @@ let
     ghostty = "ghostty";
     polybar = "polybar";
     leftwm = "leftwm";
+    opencode = "opencode";
   };
 in
 
@@ -33,6 +34,9 @@ in
     userEmail = "guillaume.demers.gd@gmail.com";
   };
 
+
+  #programs.opencode.enable = true;
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -40,8 +44,8 @@ in
       nrs = "sudo nixos-rebuild switch --flake ~/nixos#nixos-framework --impure";
     };
     initExtra = ''
-          	   export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
-      	  '';
+      export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
+    '';
   };
 
   xdg.configFile = builtins.mapAttrs
@@ -66,18 +70,22 @@ in
     #kruler
     #flameshot
     obsidian
-    discord
+    unstable.discord
     brave
     gemini-cli
     torrential
-    opencode
+    unstable.opencode
     networkmanager_dmenu
     blueman
     polybar
   ];
 
-  services.polybar = {
-    enable = true;
-    script = "polybar main &";
-  };
+  #services.polybar = {
+  # enable = true;
+  # script = ''
+  # polybar main &
+  # '';
+  #};
+
 }
+

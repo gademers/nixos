@@ -2,6 +2,7 @@
   description = "NixOS for Smee";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +22,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, oxwm, rust-overlay, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, oxwm, rust-overlay, ... }:
 
     let
       system = [ "x86_64-linux" ];
@@ -52,6 +53,7 @@
 
       nixosConfigurations.nixos-framework = nixpkgs.lib.nixosSystem {
         inherit system; #system = system;
+
         modules = [
           ./configuration.nix
           oxwm.nixosModules.default
@@ -63,6 +65,17 @@
               users.smee = ./home.nix; #import ./home.nix;
               backupFileExtension = "backup";
             };
+          }
+
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = final.system;
+                  config.allowUnfree = true;
+                };
+              })
+            ];
           }
 
         ];
