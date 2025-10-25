@@ -12,6 +12,7 @@ let
     oxwm = "oxwm";
     ghostty = "ghostty";
     polybar = "polybar";
+    leftwm = "leftwm";
   };
 in
 
@@ -74,4 +75,9 @@ in
     blueman
     polybar
   ];
+
+  services.polybar = {
+    enable = true;
+    script = "polybar main &";
+  };
 }

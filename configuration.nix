@@ -32,6 +32,7 @@
       autoRepeatInterval = 35;
       windowManager.qtile.enable = true;
       windowManager.oxwm.enable = true;
+      windowManager.leftwm.enable = true;
     };
     picom.enable = true;
   };
