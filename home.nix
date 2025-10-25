@@ -10,6 +10,8 @@ let
     picom = "picom";
     dmenu = "dmenu";
     oxwm = "oxwm";
+    ghostty = "ghostty";
+    polybar = "polybar";
   };
 in
 
@@ -70,5 +72,6 @@ in
     opencode
     networkmanager_dmenu
     blueman
+    polybar
   ];
 }

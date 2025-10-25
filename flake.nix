@@ -36,6 +36,7 @@
 
       devShells.${system}.suckless = pkgs.mkShell {
         # toolchain + headers/libs
+        # nix develop .#suckless
         packages = with pkgs; [
           pkg-config
           xorg.libX11

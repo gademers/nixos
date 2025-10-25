@@ -6,7 +6,7 @@
     border_width: 2,
     border_focused: 0x6dade3,
     border_unfocused: 0xbbbbbb,
-    font: "monospace:style=Bold:size=10",
+    font: "JetBrainsMono Nerd Font:style=Bold:size=18",
     
     gaps_enabled: true,
     gap_inner_horizontal: 5,
