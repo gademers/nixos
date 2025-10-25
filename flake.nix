@@ -62,7 +62,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.smee = ./home.nix; #import ./home.nix;
+              users.smee = import ./home.nix;
               backupFileExtension = "backup";
             };
           }

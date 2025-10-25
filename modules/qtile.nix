@@ -8,6 +8,6 @@
     flameshot
     alsa-utils
     xorg.xbacklight
-    #networkmanagerapplet
+    networkmanagerapplet
   ];
 }

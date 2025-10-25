@@ -22,6 +22,8 @@ in
     ./modules/neovim.nix
     ./modules/suckless.nix
     ./modules/qtile.nix
+    #./modules/steam.nix
+    #./modules/opencode.nix
   ];
 
   home.username = "smee";
@@ -33,9 +35,6 @@ in
     userName = "gademers";
     userEmail = "guillaume.demers.gd@gmail.com";
   };
-
-
-  #programs.opencode.enable = true;
 
   programs.bash = {
     enable = true;
@@ -66,15 +65,16 @@ in
     tealdeer
     xclip
     bat
-    steam
+    #steam
     #kruler
     #flameshot
     obsidian
     unstable.discord
     brave
     gemini-cli
+    unstable.codex
     torrential
-    unstable.opencode
+    #unstable.opencode
     networkmanager_dmenu
     blueman
     polybar

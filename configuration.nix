@@ -4,6 +4,7 @@
   imports =
     [
       /etc/nixos/hardware-configuration.nix
+      ./modules/steam.nix
     ];
 
   zramSwap = {
