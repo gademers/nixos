@@ -22,7 +22,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, oxwm, rust-overlay, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, oxwm, rust-overlay, ... }:
 
     let
       system = [ "x86_64-linux" ];
