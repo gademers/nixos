@@ -25,11 +25,11 @@
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, oxwm, rust-overlay, ... }:
 
     let
-      system = [ "x86_64-linux" ];
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays =
-          [ rust-overlay.overlay ];
+          [ rust-overlay.overlays ];
       };
     in
 

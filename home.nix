@@ -8,7 +8,6 @@ let
     rofi = "rofi";
     nvim = "nvim";
     picom = "picom";
-    dmenu = "dmenu";
     oxwm = "oxwm";
     ghostty = "ghostty";
     polybar = "polybar";
@@ -20,7 +19,6 @@ in
 {
   imports = [
     ./modules/neovim.nix
-    ./modules/suckless.nix
     ./modules/qtile.nix
     #./modules/steam.nix
     #./modules/opencode.nix
@@ -58,7 +56,6 @@ in
 
     ranger
     nix-search-tv
-
     gcc
     rofi
     bitwarden
@@ -75,7 +72,6 @@ in
     unstable.codex
     torrential
     #unstable.opencode
-    networkmanager_dmenu
     blueman
     polybar
   ];
