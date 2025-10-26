@@ -22,7 +22,7 @@ in
     ./modules/neovim.nix
     ./modules/suckless.nix
     ./modules/qtile.nix
-    #./modules/steam.nix
+    ./modules/steam.nix
     #./modules/opencode.nix
   ];
 
