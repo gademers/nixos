@@ -5,7 +5,8 @@
     [
       /etc/nixos/hardware-configuration.nix
       ./modules/steam.nix
-      #./modules/opencode.nix
+      #./modules/firefox.nix
+      #./modules/ghostty.nix
     ];
 
   zramSwap = {
@@ -57,6 +58,9 @@
   ];
 
   programs.firefox.enable = true;
+  environment.variables = {
+    TERMINAL = "ghostty";
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

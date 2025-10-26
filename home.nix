@@ -71,7 +71,7 @@ in
     gemini-cli
     unstable.codex
     torrential
-    #unstable.opencode
+    unstable.opencode
     blueman
     polybar
   ];

@@ -35,22 +35,6 @@
 
     {
 
-      devShells.${system}.suckless = pkgs.mkShell {
-        # toolchain + headers/libs
-        # nix develop .#suckless
-        packages = with pkgs; [
-          pkg-config
-          xorg.libX11
-          xorg.libXft
-          xorg.libXinerama
-          fontconfig
-          freetype
-          harfbuzz
-          gcc
-          gnumake
-        ];
-      };
-
       nixosConfigurations.nixos-framework = nixpkgs.lib.nixosSystem {
         inherit system; #system = system;
 

@@ -1,6 +1,6 @@
 [[keybind]]
 command = "Execute"
-value = "alacritty"
+value = "ghostty"
 modifier = "Mod4"
 key = "Return"
 
