@@ -5,7 +5,7 @@
 
   programs.steam = {
     enable = true;
-    package = pkgs.unstable.steam;
+    package = pkgs.steam;
     #gamescopeSession.enable = true;
   };
 

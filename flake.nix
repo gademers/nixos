@@ -1,20 +1,39 @@
 {
   description = "NixOS for Smee";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    #flake-utils = {
-    #  url = "github:numtide/flake-utils";
+    # Core
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nur.url = "github:nix-community/NUR";
+
+    # Tools
+    #disko = {
+    #  url = "github:nix-community/disko";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      #url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #deploy-rs = {
+    #  url = "github:serokell/deploy-rs";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #impermanence = {
+    #  url = "github:nix-community/impermanence";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #rust-overlay = {
+    #  url = "github:oxalica/rust-overlay";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
+    #Custom Packages
     oxwm = {
       url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,14 +41,17 @@
 
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, oxwm, rust-overlay, ... }:
+  outputs = { self, nixpkgs, ... }@inputs:
 
     let
+      lib = nixpkgs.lib;
+
+
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays =
-          [ rust-overlay.overlays ];
+          [ inputs.rust-overlay.overlays ];
       };
     in
 
@@ -40,8 +62,8 @@
 
         modules = [
           ./configuration.nix
-          oxwm.nixosModules.default
-          home-manager.nixosModules.home-manager
+          inputs.oxwm.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -49,17 +71,6 @@
               users.smee = import ./home.nix;
               backupFileExtension = "backup";
             };
-          }
-
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = final.system;
-                  config.allowUnfree = true;
-                };
-              })
-            ];
           }
 
         ];

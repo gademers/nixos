@@ -13,6 +13,7 @@ let
     polybar = "polybar";
     leftwm = "leftwm";
     opencode = "opencode";
+    nitrogen = "nitrogen";
   };
 in
 
@@ -66,12 +67,12 @@ in
     #kruler
     #flameshot
     obsidian
-    unstable.discord
+    discord
     brave
     gemini-cli
-    unstable.codex
+    codex
     torrential
-    unstable.opencode
+    opencode
     blueman
     polybar
   ];

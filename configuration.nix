@@ -54,7 +54,7 @@
     git
     alacritty
     fzf
-    unstable.ghostty
+    ghostty
   ];
 
   programs.firefox.enable = true;
