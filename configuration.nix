@@ -22,6 +22,8 @@
   networking.hostName = "nixos-framework";
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   time.timeZone = "America/Toronto";
 
 
@@ -38,11 +40,21 @@
       windowManager.leftwm.enable = true;
     };
     picom.enable = true;
+    #for nixos-framework
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.enable = true;
+      wireplumber.enable = true;
+    };
+    blueman.enable = true;
   };
+
+  security.rtkit.enable = true; #for audio priority in CPU
 
   users.users.smee = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
     packages = with pkgs; [
       tree
     ];
@@ -55,6 +67,9 @@
     alacritty
     fzf
     ghostty
+
+    #for nixos-framework
+    brightnessctl
   ];
 
   programs.firefox.enable = true;

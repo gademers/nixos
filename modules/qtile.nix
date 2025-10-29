@@ -7,6 +7,7 @@
     flameshot
     alsa-utils
     xorg.xbacklight
+
     networkmanagerapplet
     dunst #notification daemon
     nitrogen #wallpaper manager
